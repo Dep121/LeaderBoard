@@ -1,0 +1,23 @@
+.list{
+  display: flex;
+  padding: 15px;
+  align-items: center;
+  justify-content: space-around;
+  .left{
+    font-size: 1.2em;
+    font-weight: 400;
+    width: 20%;
+  }
+  .mid{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    width: 70%;
+    .content{
+      display: flex;
+    }
+  }
+  .right{
+    width: 10%;
+  }
+}

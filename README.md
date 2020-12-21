@@ -1,6 +1,6 @@
-# Full Stack Travel Log
+# Leader Board
 
-A full stack application to store / list places you have traveled.
+A full stack application to maintain LeaderBoard.
 
 ### TODO
 

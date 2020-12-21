@@ -8,6 +8,10 @@ body {
   height: 100vh;
 }
 
+h1{
+  margin: 0;
+}
+
 .error{
   color: #f05305;
 }
