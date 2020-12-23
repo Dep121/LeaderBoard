@@ -1,7 +1,7 @@
 // const API_URL = "http://localhost:1337";
 const API_URL = "http://travel-log.com";
 
-export async function listTeamEntries() {
+export async function listTeams() {
     const response = await fetch(`${API_URL}/api/teams`);
     return response.json();
 }
@@ -18,6 +18,17 @@ export async function createLogEntries(entry) {
             'content-type': 'application/json',
         },
         body: JSON.stringify(entry),
+    });
+    return response.json();
+}
+
+export async function createTeam(team_details) {
+    const response = await fetch(`${API_URL}/api/teams`, {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json',
+        },
+        body: JSON.stringify(team_details),
     });
     return response.json();
 }

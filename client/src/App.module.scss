@@ -1,0 +1,31 @@
+*{
+  box-sizing: border-box;
+}
+
+.app{
+  .listHeader{
+    display: flex;
+    padding: 15px;
+    align-items: center;
+    justify-content: space-around;
+    
+    font-size: 1.5em;
+    font-weight: 700;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-bottom: 2px solid blue;
+
+    span:first-child{
+      flex: 3;
+    }
+    span{
+      flex: 1;
+    }
+  }
+  .addTeam{
+    background-color: white;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

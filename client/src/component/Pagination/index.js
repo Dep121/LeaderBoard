@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import s from './index.module.scss';
 
-function Pagination({list, itemsPerPage}) {
+function Pagination({header, list, itemsPerPage}) {
   const [pageNumber, setPageNumber] = useState(1);
   const totalPages = list.length%itemsPerPage === 0 ? Math.floor(list.length/itemsPerPage) : Math.ceil(list.length/itemsPerPage);
 
@@ -17,10 +17,14 @@ function Pagination({list, itemsPerPage}) {
   const nextPage = pageNumber + 1 > totalPages ? false : pageNumber + 1;
 
   return <div className={s.pagination}>
+    {header}
     {
       list.slice(firstItemIndex, lastIndex).map((item, i)=><div key={i}>{item}</div>)
     }
     <div className={s.pageNumbers}>
+      <div onClick={()=>pageClick(pageNumber - 1)} style={{display: `${pageNumber === 1 ? 'none' : ''}`}} className={`${s.pageNumberBox}`}>
+        Previous
+      </div>
       {
         [previousPage, pageNumber, nextPage].map((pageBox) =>
           (
@@ -30,6 +34,9 @@ function Pagination({list, itemsPerPage}) {
           )
         )
       }
+      <div onClick={()=>pageClick(pageNumber + 1)} style={{display: `${pageNumber === totalPages ? 'none' : ''}`}} className={`${s.pageNumberBox}`}>
+        Next
+      </div>
     </div>
   </div>
 }
